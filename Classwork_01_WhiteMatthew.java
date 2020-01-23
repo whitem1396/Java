@@ -57,6 +57,7 @@ public class Classwork_01_WhiteMatthew
             String inputString;
             String name; // the users name
             int age; // the users age
+            double income;
             
             name = 
                     JOptionPane.showInputDialog("What is your name. ");
@@ -69,6 +70,16 @@ public class Classwork_01_WhiteMatthew
             age = Integer.parseInt(inputString);
             
             // Get the User's income
+            inputString =
+                    JOptionPane.showInputDialog("What is your Annual income? ");
+            
+            // Convert the input to a double
+            income = Double.parseDouble(inputString);
+            
+            // Display the results.
+            JOptionPane.showMessageDialog(null, "Hello " +
+                                           name + "");
+            
             
             
             
