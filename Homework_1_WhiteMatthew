@@ -1,0 +1,47 @@
+/*
+ * A program calculating Stocks
+ * 01/28/2020
+ * Matthew White
+ */
+
+package homework_1_whitematthew;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+
+
+
+public class Homework_1_WhiteMatthew 
+{
+
+   public static void main(String[] args)
+   {
+     
+     displayHomework();
+     displayJOptionPane();
+     
+    }
+    
+   public static void displayHomework ()
+   { 
+      int shares = 350; // The amount of shares the user bought
+      double SharePrice = 7.05; // The prices of each share
+      double fee = .02; // The fee for buying and selling shares
+      double SharesSold = .7; // How many of your own shares you sold
+      double MoneyRecieved = 22.30; // The price of each share for selling
+      
+      Scanner keyboard = new Scanner(System. in);
+      
+      System.out.print("How many shares did you buy? ");
+      
+      
+       
+           
+   }
+   
+   public static void displayJOptionPane () {
+       
+       
+   }
+}
