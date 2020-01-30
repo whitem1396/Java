@@ -25,15 +25,44 @@ public class Homework_1_WhiteMatthew
     
    public static void displayHomework ()
    { 
-      int shares = 350; // The amount of shares the user bought
-      double SharePrice = 7.05; // The prices of each share
-      double fee = .02; // The fee for buying and selling shares
-      double SharesSold = .7; // How many of your own shares you sold
-      double MoneyRecieved = 22.30; // The price of each share for selling
+       // Constants
+      final int shares = 350; // The amount of shares the user bought
+      final double SharePrice = 7.05; // The prices of each share
+      final double fee = .02; // The fee for buying and selling shares
+      final double SharesSold = .7; // How many of your own shares you sold
+      final double MoneyRecieved = 22.30; // The price of each share for selling
+      // Variables
+      double TotalPricePaid; // The amount paid for all shares;
+      double feePaid; // The fee price paid for buting the stocks;
+      double Value;
       
       Scanner keyboard = new Scanner(System. in);
       
-      System.out.print("How many shares did you buy? ");
+      // Get the amount of shares bought
+      System.out.println("You bought this many shares: " + shares);
+      // Get the price paid for the shares
+      System.out.println("You paid this much for each Share: " + SharePrice);
+      
+      // Calculate the total price paid for the shares 
+      TotalPricePaid = shares * SharePrice;
+      // Output the total amount
+      System.out.println("You paid $" + TotalPricePaid + " For all the shares.");
+      // Get the fee amount
+      System.out.println("This is the fee for buying the shares " + fee);
+      
+      // Calculate the fee paid for the overall price of the stocks
+      feePaid = fee * TotalPricePaid;
+      // Output the result of the amount paid for the total share price
+      System.out.println("You paid a total fee price of $" + feePaid);
+      
+      // Calculate the value of the shares
+      Value = TotalPricePaid - feePaid;
+      // Output the shares baought and the total value of the current shares
+      System.out.println("You own " + shares + " Shares. The total value of your"
+              + " shares is " + Value);
+      
+      
+      
       
       
        
