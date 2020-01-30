@@ -32,9 +32,9 @@ public class Homework_1_WhiteMatthew
       final double SharesSold = .7; // How many of your own shares you sold
       final double MoneyRecieved = 22.30; // The price of each share for selling
       // Variables
-      double TotalPricePaid; // The amount paid for all shares;
-      double feePaid; // The fee price paid for buting the stocks;
-      double Value;
+      double TotalPricePaid; // The amount paid for all shares
+      double feePaid; // The fee price paid for buting the stocks
+      double Value;   // The value of the current shares
       
       Scanner keyboard = new Scanner(System. in);
       
