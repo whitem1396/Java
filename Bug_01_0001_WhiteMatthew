@@ -1,0 +1,55 @@
+/*
+ * Editing a given file with errors
+ * 01/30/2020
+ * Matthew White */
+ 
+package bug_01_0001_whitematthew;
+import java.util.Scanner; // Needed for the Scanner class
+
+
+public class bug_01_0001_WhiteMatthew {
+   public static void main(String[] args){    
+   {
+      // Constants
+      final double TAX_RATE = 0.0675;  // Tax rate
+      final double TIP_PERCENT = 0.2;  // Tip percentage
+      // Variables
+      String name;           // To hold the users name
+      double meal;        // To hold the meal charge
+      double tax;         // To hold the amount of tax
+      double tip;         // To hold the tip amount
+      double total;       // To hold the total charge
+      // Create a Scanner object for keyboard input.
+      Scanner keyboard = new Scanner(System.in);   
+      // Get the Users name
+      System.out.println("Enter your name: ");
+      name = keyboard.nextLine ();
+      
+      // Get the charge for the meal.
+      System.out.println("Enter the charge for the meal: ");
+      meal = keyboard.nextDouble ();
+      
+      // Calculate the tax.
+      tax = meal * TAX_RATE;   
+      // Calculate the tip.
+      tip = meal * TIP_PERCENT; 
+      // Calculate the total.
+      total = meal + tax + tip;
+      // Display the results.
+      System.out.println("----------------------");
+      System.out.println("Hello " + name);
+      System.out.println("----------------------");
+      System.out.println("Your Meal Charge: $" + meal);
+      System.out.println("Tax:         $" + tax);
+      System.out.println("Tip:         $" + tip);
+      System.out.println("======================");
+      System.out.println("Total:       $" + total);
+      
+  }
+ }
+}
+   
+   
+
+
+
