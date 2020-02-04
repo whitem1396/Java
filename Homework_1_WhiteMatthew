@@ -28,27 +28,36 @@ public class Homework_1_WhiteMatthew
        // Constants
       final int shares = 350; // The amount of shares the user bought
       final double SharePrice = 7.05; // The prices of each share
+      final double NewSharePrice = 22.30; // Price of shares after a while
       final double fee = .02; // The fee for buying and selling shares
       final double SharesSold = .7; // How many of your own shares you sold
-      final double MoneyRecieved = 22.30; // The price of each share for selling
+      
       // Variables
       double TotalPricePaid; // The amount paid for all shares
-      double feePaid; // The fee price paid for buting the stocks
+      double feePaid; // The fee price paid for buying the stocks
+      double NewFeePaid; // The fee price for selling stocks
       double Value;   // The value of the current shares
+      double NewValue; // The new value of your stocks after a while
+      double SoldShares; // Amount the stock being sold
+      double TotalValue; // Amount recieved for selling stock
+      double sharesleft; // amount of shares left after seliing 70%
+      double NewTotalValue; // Brand new value of the shares you own left
+      double SeventyPercentTPP; //Seventy Percent of total price paid
+      double TotalProfit; // Thte total profit after selling shares
       
       Scanner keyboard = new Scanner(System. in);
       
       // Get the amount of shares bought
       System.out.println("You bought this many shares: " + shares);
       // Get the price paid for the shares
-      System.out.println("You paid this much for each Share: " + SharePrice);
+      System.out.println("You paid this much for each Share: $" + SharePrice);
       
       // Calculate the total price paid for the shares 
       TotalPricePaid = shares * SharePrice;
       // Output the total amount
       System.out.println("You paid $" + TotalPricePaid + " For all the shares.");
       // Get the fee amount
-      System.out.println("This is the fee for buying the shares " + fee);
+      System.out.println("This is the fee for buying the shares $" + fee);
       
       // Calculate the fee paid for the overall price of the stocks
       feePaid = fee * TotalPricePaid;
@@ -56,10 +65,47 @@ public class Homework_1_WhiteMatthew
       System.out.println("You paid a total fee price of $" + feePaid);
       
       // Calculate the value of the shares
-      Value = TotalPricePaid - feePaid;
-      // Output the shares baought and the total value of the current shares
+      Value = TotalPricePaid + feePaid;
+      // Output the shares bought and the total value of the current shares
       System.out.println("You own " + shares + " Shares. The total value of your"
-              + " shares is " + Value);
+              + " shares is $" + Value);
+      
+      // Calculate the new value of your shares
+      NewValue = shares*NewSharePrice; 
+      // output the info of the new value
+      System.out.println("You own " + shares + " Shares. The new value of your stock "
+                         + "right now is $" + NewValue);
+      
+      // Calculating the price of sold shares
+      SoldShares = shares * SharesSold;
+      // Calculate the TotalValue of shares being sold
+      TotalValue = SoldShares * NewSharePrice;
+      // Output the info of 
+      System.out.println("You are selling " + Math.rint(SoldShares) + " shares. At a new "
+              + "value of $" + Math.rint(TotalValue));
+      
+      // Calculate the Price paid for selling stocks
+      NewFeePaid = TotalValue * fee;
+      
+      System.out.println("The fee you're paying for selling 70% of your shares "
+              + "is $" + Math.rint(NewFeePaid));
+      
+      // Calculate How many shares are eft after selling and the New value
+      sharesleft = shares - SoldShares;
+      NewTotalValue = sharesleft * NewSharePrice;
+      
+      System.out.println(("You have " + Math.rint(sharesleft) + " shares. At "
+              + " this new value $" + Math.rint(NewTotalValue)));     
+              
+      //
+      SeventyPercentTPP = Value * SharesSold; 
+      TotalProfit = TotalValue - NewFeePaid - SeventyPercentTPP;
+      
+      System.out.println("The total profit after selling the stock and paying"
+              + " the fees is $" + Math.round(TotalProfit));
+      
+      
+      
       
       
       
