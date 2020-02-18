@@ -6,7 +6,7 @@
 
 package homework_1_whitematthew;
 
-import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 
@@ -18,103 +18,11 @@ public class Homework_1_WhiteMatthew
    public static void main(String[] args)
    {
      
-     displayHomework();
      displayJOptionPane();
      
     }
     
-   public static void displayHomework ()
-   { 
-       // Constants
-      final int shares = 350; // The amount of shares the user bought
-      final double SharePrice = 7.05; // The prices of each share
-      final double NewSharePrice = 22.30; // Price of shares after a while
-      final double fee = .02; // The fee for buying and selling shares
-      final double SharesSold = .7; // How many of your own shares you sold
-      
-      // Variables
-      double TotalPricePaid; // The amount paid for all shares
-      double feePaid; // The fee price paid for buying the stocks
-      double NewFeePaid; // The fee price for selling stocks
-      double Value;   // The value of the current shares
-      double NewValue; // The new value of your stocks after a while
-      double SoldShares; // Amount the stock being sold
-      double TotalValue; // Amount recieved for selling stock
-      double sharesleft; // amount of shares left after seliing 70%
-      double NewTotalValue; // Brand new value of the shares you own left
-      double SeventyPercentTPP; //Seventy Percent of total price paid
-      double TotalProfit; // Thte total profit after selling shares
-      
-      Scanner keyboard = new Scanner(System. in);
-      
-      // Get the amount of shares bought
-      System.out.println("You bought this many shares: " + shares);
-      // Get the price paid for the shares
-      System.out.println("You paid this much for each Share: $" + SharePrice);
-      
-      // Calculate the total price paid for the shares 
-      TotalPricePaid = shares * SharePrice;
-      // Output the total amount
-      System.out.println("You paid $" + TotalPricePaid + " For all the shares.");
-      // Get the fee amount
-      System.out.println("This is the fee for buying the shares %" + fee);
-      
-      // Calculate the fee paid for the overall price of the stocks
-      feePaid = fee * TotalPricePaid;
-      // Output the result of the amount paid for the total share price
-      System.out.println("You paid a total fee price of $" + feePaid);
-      
-      // Calculate the value of the shares
-      Value = TotalPricePaid + feePaid;
-      // Output the shares bought and the total value of the current shares
-      System.out.println("You own " + shares + " Shares. The total value of your"
-              + " shares is $" + Value);
-      
-      // Calculate the new value of your shares
-      NewValue = shares*NewSharePrice; 
-      // output the info of the new value
-      System.out.println("You own " + shares + " Shares. The new value of your stock "
-                         + "right now is $" + NewValue);
-      
-      // Calculating the price of sold shares
-      SoldShares = shares * SharesSold;
-      // Calculate the TotalValue of shares being sold
-      TotalValue = SoldShares * NewSharePrice;
-      // Output the info of 
-      System.out.println("You are selling " + Math.rint(SoldShares) + " shares. At a new "
-              + "value of $" + Math.rint(TotalValue));
-      
-      // Calculate the Price paid for selling stocks
-      NewFeePaid = TotalValue * fee;
-      
-      System.out.println("The fee you're paying for selling 70% of your shares "
-              + "is $" + Math.rint(NewFeePaid));
-      
-      // Calculate How many shares are eft after selling and the New value
-      sharesleft = shares - SoldShares;
-      NewTotalValue = sharesleft * NewSharePrice;
-      
-      System.out.println(("You have " + Math.rint(sharesleft) + " shares. At "
-              + " this new value $" + Math.rint(NewTotalValue)));     
-              
-      //
-      SeventyPercentTPP = Value * SharesSold; 
-      TotalProfit = TotalValue - NewFeePaid - SeventyPercentTPP;
-      
-      System.out.println("The total profit after selling the stock and paying"
-              + " the fees is $" + Math.round(TotalProfit));
-      
-      
-      
-      
-      
-      
-      
-      
-       
-           
-   }
-   
+ 
    public static void displayJOptionPane () {
     
        
@@ -123,17 +31,9 @@ public class Homework_1_WhiteMatthew
     String inputString;   
     int shares; 
     double SharePrice; // The prices of each share
-    double NewSharePrice; // Price of shares after a while
-    double SharesSold; // How many of your own shares you sold
-    double NewFeePaid; // The fee price for selling stocks
-    double Value;   // The value of the current shares
-    double NewValue; // The new value of your stocks after a while
-    int SoldShares; // Amount the stock being sold
-    double TotalValue; // Amount recieved for selling stock
-    double sharesleft; // amount of shares left after seliing 70%
-    double NewTotalValue; // Brand new value of the shares you own left
+    double NewPrice; // Price of shares after a while
+    int SharesSold; // Amount the stock being sold
     double SeventyPercentTPP; //Seventy Percent of total price paid
-    double TotalProfit; // Thte total profit after selling shares
     // asking the user how many shares they bought
     inputString =
             JOptionPane.showInputDialog("How many shares did you buy?");
@@ -148,23 +48,43 @@ public class Homework_1_WhiteMatthew
     SharePrice = Double.parseDouble(inputString);
     
        // Insert here how much the users stock is worth and the fee price paid
-       // Then tell the user how much their stocks went up in value
+       // Then tell the user how much their stocks went up or down in value
     double TotalPricePaid = shares * SharePrice;
     double feePaid = TotalPricePaid * fee;
     double value = TotalPricePaid + feePaid;
-    JOptionPane.showMessageDialog(null, "The total Price paid for the shares is "
-            + "$" + TotalPricePaid + "\nAnd with a total fee of $" + feePaid +
-            "\nThe total value of your shares is $" + value);
+    JOptionPane.showMessageDialog(null, "You paid a total price of $" 
+            + TotalPricePaid + " for your shares\nAnd with a total fee of $" 
+            + feePaid + "\nThe total value of your shares is $" + value);
+   
+    inputString =
+            JOptionPane.showInputDialog("What is the new current price of the "
+                    + "shares?");
+    NewPrice = Double.parseDouble(inputString);
+    double NewValue = shares * NewPrice + feePaid;
     
+    // Output the amount the shares have gone up in or down in value
+    JOptionPane.showMessageDialog(null, "You bought " + shares +
+            " the shares you bought have now changed in value to $" + NewValue);
     
     
    inputString =
         JOptionPane.showInputDialog("How many shares are you selling?");   
-    
    SharesSold = Integer.parseInt(inputString);
    
+   double NewFeePaid = SharesSold * NewPrice * fee;
+   double TotalValue = SharesSold * NewPrice - NewFeePaid;
+   JOptionPane.showMessageDialog(null, "You are selling " + SharesSold + " shares."
+          + "\n At the new price of $" + NewPrice + "\n With a fee of $" + 
+           NewFeePaid + " for a total value of $" + TotalValue);
    
+   int sharesleft = shares - SharesSold;
+   double NewTotalValue = sharesleft * NewPrice;
+   double percent = (double) SharesSold / shares;
+   double TotalProfit = Math.round(percent * TotalValue);
    
+   JOptionPane.showMessageDialog(null, "You have " + sharesleft + " shares left"
+           + " at a new value of $" + NewTotalValue + "\nAnd you sold " +
+           SharesSold + " shares for a total profit of $" + TotalProfit);
        
    }
 }
