@@ -1,0 +1,96 @@
+package bug_03_whitematthew;
+import java.util.Scanner;
+public class Bug_03_WhiteMatthew
+{
+   public static void main(String[] args)
+   {
+      double salary;       // Annual salary
+      double yearsOnJob;   // Years at current job
+      Scanner keyboard = new Scanner(System.in);
+      System.out.print("Enter your annual salary: ");
+      salary = keyboard.nextDouble();
+      System.out.print("Enter the number of years at your current job: ");
+      yearsOnJob = keyboard.nextDouble();
+      if (salary >= 50000)
+      {
+         if (yearsOnJob >= 2)
+         {
+            System.out.println("You qualify for the loan.");
+         }
+         else
+         {
+            System.out.println("You must have been on your current job for at "
+                    + "least two years to qualify.");
+         }
+      }
+      else
+      {
+            System.out.println("You must earn at least $50,000 per year to"
+                    + " qualify.");
+      }
+   }
+}
+
+
+
+package bug_04_whitematthew;
+import java.util.Scanner;
+public class Bug_04__WhiteMatthew
+{
+   public static void main(String[] args)
+   {
+      double salary;       // Annual salary
+      double yearsOnJob;   // Years at current job
+      Scanner keyboard = new Scanner(System.in);
+      System.out.print("Enter your annual salary: ");
+      salary = keyboard.nextDouble();
+      System.out.print("Enter the number of years at your current job: ");
+      yearsOnJob = keyboard.nextDouble();
+      if (salary >= 50000 && yearsOnJob >= 2)
+      {
+          System.out.println("You qualify for the loan.");
+      }
+      else
+      {
+         System.out.println("You do not qualify.");
+      {
+   }
+  }
+ }
+}
+
+
+
+
+package bug_05_whitematthew;
+import java.util.Scanner;
+public class Bug_05_WhiteMatthew        
+{
+   public static void main(String[] args)
+   {
+      Scanner keyboard = new Scanner(System.in); 
+      String input;     // To hold the user's input
+      char foodGrade;   // Grade of pet food
+      System.out.println("Our pet food is available in three grades:");
+      System.out.print("A, B, and C. Which do you want pricing for? ");
+      input = keyboard.nextLine();
+      foodGrade = input.charAt(0);
+      switch(foodGrade)
+      {
+         case 'a':
+         case 'A':
+            System.out.println("30 cents per lb.");
+            break;
+         case 'b':
+         case 'B':
+            System.out.println("20 cents per lb.");
+            break;
+         case 'c':
+         case 'C':
+            System.out.println("15 cents per lb.");
+            break;
+         default:
+            System.out.println("Invalid choice.");
+        }
+   }
+}
