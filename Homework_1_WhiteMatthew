@@ -57,7 +57,7 @@ public class Homework_1_WhiteMatthew
       // Output the total amount
       System.out.println("You paid $" + TotalPricePaid + " For all the shares.");
       // Get the fee amount
-      System.out.println("This is the fee for buying the shares $" + fee);
+      System.out.println("This is the fee for buying the shares %" + fee);
       
       // Calculate the fee paid for the overall price of the stocks
       feePaid = fee * TotalPricePaid;
@@ -116,7 +116,55 @@ public class Homework_1_WhiteMatthew
    }
    
    public static void displayJOptionPane () {
+    
        
+    final double fee = 0.02;   
+       
+    String inputString;   
+    int shares; 
+    double SharePrice; // The prices of each share
+    double NewSharePrice; // Price of shares after a while
+    double SharesSold; // How many of your own shares you sold
+    double NewFeePaid; // The fee price for selling stocks
+    double Value;   // The value of the current shares
+    double NewValue; // The new value of your stocks after a while
+    int SoldShares; // Amount the stock being sold
+    double TotalValue; // Amount recieved for selling stock
+    double sharesleft; // amount of shares left after seliing 70%
+    double NewTotalValue; // Brand new value of the shares you own left
+    double SeventyPercentTPP; //Seventy Percent of total price paid
+    double TotalProfit; // Thte total profit after selling shares
+    // asking the user how many shares they bought
+    inputString =
+            JOptionPane.showInputDialog("How many shares did you buy?");
+    //converting the string to an int
+    shares = Integer.parseInt(inputString);
+    
+    // asking the user the price they paid for each share
+    inputString = 
+            JOptionPane.showInputDialog("How much did you pay for"
+            + " each share?");
+    //converting the string to a double
+    SharePrice = Double.parseDouble(inputString);
+    
+       // Insert here how much the users stock is worth and the fee price paid
+       // Then tell the user how much their stocks went up in value
+    double TotalPricePaid = shares * SharePrice;
+    double feePaid = TotalPricePaid * fee;
+    double value = TotalPricePaid + feePaid;
+    JOptionPane.showMessageDialog(null, "The total Price paid for the shares is "
+            + "$" + TotalPricePaid + "\nAnd with a total fee of $" + feePaid +
+            "\nThe total value of your shares is $" + value);
+    
+    
+    
+   inputString =
+        JOptionPane.showInputDialog("How many shares are you selling?");   
+    
+   SharesSold = Integer.parseInt(inputString);
+   
+   
+   
        
    }
 }
