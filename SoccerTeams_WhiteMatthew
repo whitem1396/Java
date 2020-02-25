@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class SoccerTeams_WhiteMatthew 
 {
     public static void main(String[] args) 
-    {
+   {
       final int MIN_PLAYERS = 9; // Minimum players per team
       final int MAX_PLAYERS = 15; // Maximum players per team
       int players;               // Number of available players
@@ -19,7 +19,8 @@ public class SoccerTeams_WhiteMatthew
       String input;              // To hold the user input
       
       // Get the number of players per team.
-      input = JOptionPane.showInputDialog("Enter the number of players per "
+      // do while loop to keep the program goin under certain conditions
+     do{ input = JOptionPane.showInputDialog("Enter the number of players per "
               + "team");
       
       teamSize = Integer.parseInt(input);
@@ -55,13 +56,39 @@ public class SoccerTeams_WhiteMatthew
       
       // Display the results.
       JOptionPane.showMessageDialog(null, "There will be " + teams + " teams"
-              + " with " + leftOver + " players left over.");
+                   + " with " + leftOver + " players left over.");
       
-     if (leftOver == 0);
-        JOptionPane.showMessageDialog(null,"There are no players left over"
-                + " good job!");
-        
+      if (leftOver != 0){
+         JOptionPane.showMessageDialog(null, "Sorry there can not be any left"
+                 + " over players. \nPlease try again!");
+      }
+    
+      // if and else statement depending on how many players get left out of teams
+   } while (leftOver > 0);
+        JOptionPane.showMessageDialog(null,"Congratulations!!"
+                + "\n-------------------------------------------------------"
+                + " \nThere are no players left over good job!"
+                + " \n------------------------------------------------------"
+                + "\nGoodbye");
+    
+    
+                 
+    
+    // A do while loop to loop the program incase there are players left out
+    /*do {
+      main(null);
+      if (leftOver == 0);{
+        break;
+    }
       
+    } while (leftOver != 0);
+       
+   */ // Is there any way to make this code work? by calling main and stopping
+   // the loop from being infinite?
+    
+    
+    
+    
       System.exit(0);
       }
     }
