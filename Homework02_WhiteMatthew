@@ -3,20 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication2;
+package homework_02_whitematthew;
 import java.util.Scanner;
 
-public class JavaApplication2 {
+public class Homework_02_WhiteMatthew {
 
    public static void main(String[] args) {
    
    //--------------------------------------------------------------------------
   int CodeListing;
+  Scanner input = new Scanner(System.in);
   Scanner keyboard = new Scanner(System.in);
   System.out.print("Enter 1, 2, or 3: ");
   
   CodeListing = keyboard.nextInt();
   
+  do
+  {
   switch(CodeListing)
   {
       case 1:   
@@ -50,31 +53,31 @@ public class JavaApplication2 {
    
    // Compare mark and mary
       case 2:
-   String name4="Mark",
+          String name4="Mark",
           name5="Mary";
    
-   if (name4.compareTo(name5) < 0)
-   {
-       System.out.println(name4 + " is less than " + name5);
-   }
-   else if(name4.compareTo(name5) == 0)
-   {
-      System.out.println(name4 + " is equal to " + name5); 
-   }
-   else if (name4.compareTo(name5) > 0)
-   {
-       System.out.println(name4 + " is greater than " + name5);
-   }
-   break;
+            if (name4.compareTo(name5) < 0)
+            {
+                System.out.println(name4 + " is less than " + name5);
+            }
+            else if(name4.compareTo(name5) == 0)
+            {
+                System.out.println(name4 + " is equal to " + name5); 
+            }
+            else if (name4.compareTo(name5) > 0)
+            {
+                System.out.println(name4 + " is greater than " + name5);
+            }
+            break;
    // -------------------------------------------------------------------------
    /*   Code Listing 3-11   */
       case 3:
-   String input;
+   String input2;
    Scanner Keyboard = new Scanner(System.in);
    System.out.print("Enter the secret word: ");
-   input = Keyboard.nextLine();
+   input2 = Keyboard.nextLine();
    
-   if (input.equalsIgnoreCase("PROSPERO"))
+   if (input2.equalsIgnoreCase("PROSPERO"))
    {
        System.out.println("Congratulations! You know the secret word!");
    }
@@ -88,9 +91,9 @@ public class JavaApplication2 {
           System.out.println("Error, Invalid input");
           break;
    }
- 
+  }
+  while(CodeListing != -1);
    
    
  }    
 }
-
